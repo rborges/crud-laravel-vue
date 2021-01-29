@@ -64,6 +64,8 @@ class UserController extends Controller
                     'message'   => 'Record not found',
                 ], 404);
             }
+
+            $data['password'] = bcrypt($data['password']);
             $model->fill($data);
             $model->save();
 
@@ -78,7 +80,11 @@ class UserController extends Controller
     public function store(Request $request)
     {
         try {
+            $data = $request->all();
+            $data['password'] = bcrypt($data['password']);
+            
             $model = $this->model->create($request->all());
+
             return response()->json($model);
         } catch (Exception $e) {
             return response()->json([

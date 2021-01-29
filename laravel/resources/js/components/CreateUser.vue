@@ -10,7 +10,11 @@
           </div>
           <div class="form-group">
             <label>Email</label>
-            <input type="text" class="form-control" v-model="user.email" />
+            <input type="email" class="form-control" v-model="user.email" />
+          </div>
+          <div class="form-group">
+            <label>Password</label>
+            <input type="password" class="form-control" v-model="user.password" />
           </div>
           
           <button type="submit" class="btn btn-primary float-right">save</button>
