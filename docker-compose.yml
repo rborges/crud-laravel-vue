@@ -1,0 +1,51 @@
+version: "3.0"
+
+services:
+  database:
+    image: postgres:13-alpine
+    container_name: ${PROJECT_NAME}-database
+    restart: always
+    ports:
+      - "${DB_PORT}:5432"
+    environment:
+      - TZ=America/Sao_Paulo
+      - PGTZ=America/Sao_Paulo
+      - POSTGRES_DB=${DB_DATABASE}
+      - POSTGRES_USER=${DB_USERNAME}
+      - POSTGRES_PASSWORD=${DB_PASSWORD}
+    networks:
+      - backend
+    volumes:
+      - "./docker/postgres:/var/lib/postgresql/data"
+  php-fpm:
+    build: ./docker/php-fpm
+    depends_on:
+      - database
+    container_name: ${PROJECT_NAME}-php-fpm
+    working_dir: /var/www
+    environment:
+      - NEW_UID=${HOST_UID}
+      - NEW_GID=${HOST_GID}
+      - TIMEZONE=America/Sao_Paulo
+    networks:
+        - backend
+    volumes:
+      - ./:/var/www
+  nginx:
+    build: ./docker/nginx  
+    restart: always
+    depends_on:
+      - php-fpm
+      - database
+    container_name: ${PROJECT_NAME}-nginx
+    working_dir: /var/www
+    networks:
+      - backend
+    volumes:
+      - ./:/var/www
+    ports:
+      - "${WEBSERVER_HTTP_PORT}:80"
+      - "${WEBSERVER_HTTPS_PORT}:443"
+networks:       
+  backend:
+    driver: bridge
