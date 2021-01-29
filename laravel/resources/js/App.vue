@@ -4,7 +4,7 @@
       <div class="collapse navbar-collapse">
         <div class="navbar-nav">
           <router-link to="/" class="nav-item nav-link">Home</router-link>
-          <router-link to="/create" class="nav-item nav-link">New user</router-link>
+          <router-link to="/create" class="btn btn-success">New user</router-link>
         </div>
       </div>
     </nav>

@@ -1,8 +1,8 @@
 <template>
-  <div>
+  <div id="content">
     <h3 class="text-center">Create User</h3>
     <div class="row">
-      <div class="col-md-6">
+      <div class="col-12">
         <form @submit.prevent="create">
           <div class="form-group">
             <label>Name</label>
@@ -12,11 +12,8 @@
             <label>Email</label>
             <input type="text" class="form-control" v-model="user.email" />
           </div>
-          <div class="form-group">
-            <label>Password</label>
-            <input type="text" class="form-control" v-model="user.password" />
-          </div>
-          <button type="submit" class="btn btn-primary">save</button>
+          
+          <button type="submit" class="btn btn-primary float-right">save</button>
         </form>
       </div>
     </div>

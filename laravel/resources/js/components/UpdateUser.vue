@@ -2,7 +2,7 @@
   <div>
     <h3 class="text-center">Edit user</h3>
     <div class="row">
-      <div class="col-md-6">
+      <div class="col-12">
         <form @submit.prevent="updateUser">
           <input type="hidden" class="form-control" v-model="user.id" />
           <div class="form-group">
@@ -13,11 +13,7 @@
             <label>E-mail</label>
             <input type="text" class="form-control" v-model="user.email" />
           </div>
-          <div class="form-group">
-            <label>Password</label>
-            <input type="text" class="form-control" v-model="user.password" />
-          </div>
-          <button type="submit" class="btn btn-primary">save</button>
+          <button type="submit" class="btn btn-primary float-right">save</button>
         </form>
       </div>
     </div>

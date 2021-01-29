@@ -1897,9 +1897,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   data: function data() {
     return {
@@ -1937,10 +1934,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => __WEBPACK_DEFAULT_EXPORT__
 /* harmony export */ });
-//
-//
-//
-//
 //
 //
 //
@@ -37874,10 +37867,7 @@ var render = function() {
                 _vm._v(" "),
                 _c(
                   "router-link",
-                  {
-                    staticClass: "nav-item nav-link",
-                    attrs: { to: "/create" }
-                  },
+                  { staticClass: "btn btn-success", attrs: { to: "/create" } },
                   [_vm._v("New user")]
                 )
               ],
@@ -37917,11 +37907,11 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", [
+  return _c("div", { attrs: { id: "content" } }, [
     _c("h3", { staticClass: "text-center" }, [_vm._v("Create User")]),
     _vm._v(" "),
     _c("div", { staticClass: "row" }, [
-      _c("div", { staticClass: "col-md-6" }, [
+      _c("div", { staticClass: "col-12" }, [
         _c(
           "form",
           {
@@ -37985,35 +37975,12 @@ var render = function() {
               })
             ]),
             _vm._v(" "),
-            _c("div", { staticClass: "form-group" }, [
-              _c("label", [_vm._v("Password")]),
-              _vm._v(" "),
-              _c("input", {
-                directives: [
-                  {
-                    name: "model",
-                    rawName: "v-model",
-                    value: _vm.user.password,
-                    expression: "user.password"
-                  }
-                ],
-                staticClass: "form-control",
-                attrs: { type: "text" },
-                domProps: { value: _vm.user.password },
-                on: {
-                  input: function($event) {
-                    if ($event.target.composing) {
-                      return
-                    }
-                    _vm.$set(_vm.user, "password", $event.target.value)
-                  }
-                }
-              })
-            ]),
-            _vm._v(" "),
             _c(
               "button",
-              { staticClass: "btn btn-primary", attrs: { type: "submit" } },
+              {
+                staticClass: "btn btn-primary float-right",
+                attrs: { type: "submit" }
+              },
               [_vm._v("save")]
             )
           ]
@@ -38049,7 +38016,7 @@ var render = function() {
     _c("h3", { staticClass: "text-center" }, [_vm._v("Edit user")]),
     _vm._v(" "),
     _c("div", { staticClass: "row" }, [
-      _c("div", { staticClass: "col-md-6" }, [
+      _c("div", { staticClass: "col-12" }, [
         _c(
           "form",
           {
@@ -38135,35 +38102,12 @@ var render = function() {
               })
             ]),
             _vm._v(" "),
-            _c("div", { staticClass: "form-group" }, [
-              _c("label", [_vm._v("Password")]),
-              _vm._v(" "),
-              _c("input", {
-                directives: [
-                  {
-                    name: "model",
-                    rawName: "v-model",
-                    value: _vm.user.password,
-                    expression: "user.password"
-                  }
-                ],
-                staticClass: "form-control",
-                attrs: { type: "text" },
-                domProps: { value: _vm.user.password },
-                on: {
-                  input: function($event) {
-                    if ($event.target.composing) {
-                      return
-                    }
-                    _vm.$set(_vm.user, "password", $event.target.value)
-                  }
-                }
-              })
-            ]),
-            _vm._v(" "),
             _c(
               "button",
-              { staticClass: "btn btn-primary", attrs: { type: "submit" } },
+              {
+                staticClass: "btn btn-primary float-right",
+                attrs: { type: "submit" }
+              },
               [_vm._v("save")]
             )
           ]
@@ -38200,7 +38144,7 @@ var render = function() {
     _vm._v(" "),
     _c("br"),
     _vm._v(" "),
-    _c("table", { staticClass: "table table-bordered" }, [
+    _c("table", { staticClass: "table table-striped" }, [
       _vm._m(0),
       _vm._v(" "),
       _c(

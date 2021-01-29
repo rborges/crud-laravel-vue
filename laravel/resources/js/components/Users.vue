@@ -3,7 +3,7 @@
     <h3 class="text-center">Users</h3>
     <br />
 
-    <table class="table table-bordered">
+    <table class="table table-striped">
       <thead>
         <tr>
           <th>ID</th>
